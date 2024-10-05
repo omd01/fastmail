@@ -1,5 +1,16 @@
 # fastmail
 
+## 1.0.7
+
+### Patch Changes
+
+- 961c51f: Added new Email Templets
+
+  - Test
+  - Verification
+  - Newsletter
+  - Event Invitation
+
 ## 1.0.6
 
 ### Patch Changes
