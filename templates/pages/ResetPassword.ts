@@ -1,8 +1,14 @@
-export type OtpTempletParams = {
-  otp: Number;
+export type TResetPassword = {
+  userName: String;
+  requestTime: String;
+  resetLink: String;
 };
 
-export const otpTemplet = ({ otp }: OtpTempletParams): string => {
+export const ResetPassword = ({
+  userName,
+  requestTime,
+  resetLink,
+}: TResetPassword): string => {
   return `
     <!DOCTYPE html>
 <html lang="en">
@@ -10,7 +16,7 @@ export const otpTemplet = ({ otp }: OtpTempletParams): string => {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>OTP for Authentication</title>
+  <title>Password Reset Request</title>
   <style>
     /* General styling */
     body {
@@ -127,24 +133,24 @@ export const otpTemplet = ({ otp }: OtpTempletParams): string => {
     <!-- Header -->
     <tr>
       <td class="email-header">
-        <h1>Your OTP for Authentication</h1>
-        <p>This OTP is required to complete the authentication process</p>
+        <h1>Password Reset Request</h1>
+        <p>We received a request to reset your password</p>
       </td>
     </tr>
 
     <!-- Body -->
     <tr>
       <td class="email-body">
+        <h2>Hello ${userName},</h2>
         <p>
-          Your One-Time Password (OTP) for authentication is: <strong>${otp}</strong>.
+          We received a request to reset your password on ${requestTime}. If this was you, click the link below to reset your password:
         </p>
         <p>
-          If you did not request this, please ignore this message.
+          <a href="${resetLink}" class="email-button">Reset Password</a>
         </p>
-        <!-- Button -->
-        <div class="email-button">
-          <a href="https://your-website.com" target="_blank">Authenticate Now</a>
-        </div>
+        <p>
+          If you did not request a password reset, you can ignore this email.
+        </p>
       </td>
     </tr>
 
@@ -157,5 +163,6 @@ export const otpTemplet = ({ otp }: OtpTempletParams): string => {
   </table>
 </body>
 </html>
-`;
+
+    `;
 };

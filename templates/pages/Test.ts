@@ -1,22 +1,12 @@
-export type ResetPasswordParams = {
-  userName: String;
-  requestTime: String;
-  resetLink: String;
-};
-
-export const resetPasswordTemplet = ({
-  userName,
-  requestTime,
-  resetLink,
-}: ResetPasswordParams): string => {
-  return `
-    <!DOCTYPE html>
+export function Test() {
+    return `
+  <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Password Reset Request</title>
+  <title>Test Email</title>
   <style>
     /* General styling */
     body {
@@ -133,23 +123,20 @@ export const resetPasswordTemplet = ({
     <!-- Header -->
     <tr>
       <td class="email-header">
-        <h1>Password Reset Request</h1>
-        <p>We received a request to reset your password</p>
+        <h1>This is a Test Email</h1>
+        <p>Testing email functionality</p>
       </td>
     </tr>
 
     <!-- Body -->
     <tr>
       <td class="email-body">
-        <h2>Hello ${userName},</h2>
+        <h2>Yupppp!!! Welcome to FastMail </h2>
         <p>
-          We received a request to reset your password on ${requestTime}. If this was you, click the link below to reset your password:
+            This is a test email to check if the email functionality is working properly.
         </p>
         <p>
-          <a href="${resetLink}" class="email-button">Reset Password</a>
-        </p>
-        <p>
-          If you did not request a password reset, you can ignore this email.
+          If you did not expect this test, please ignore this email.
         </p>
       </td>
     </tr>
@@ -163,6 +150,5 @@ export const resetPasswordTemplet = ({
   </table>
 </body>
 </html>
-
-    `;
-};
+`
+}

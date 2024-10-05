@@ -5,8 +5,21 @@
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./templates": {
+      "import": "./dist/templates/index.mjs",
+      "require": "./dist/templates/index.js",
+      "types": "./dist/templates/index.d.ts"
+    }
+  },
   "scripts": {
     "build": "rm -rf dist && tsup",
+    "dev": "tsup --watch",
     "release": "pnpm run build && changeset publish",
     "lint": "tsc"
   },
