@@ -1,5 +1,11 @@
 # tsup-template
 
+## 0.0.3
+
+### Patch Changes
+
+- 40e0c84: Some minor changes
+
 ## 0.0.2
 
 ### Patch Changes
