@@ -1,5 +1,11 @@
 # tsup-template
 
+## 0.0.4
+
+### Patch Changes
+
+- 290109a: Added some files
+
 ## 0.0.3
 
 ### Patch Changes
