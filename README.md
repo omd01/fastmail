@@ -74,7 +74,8 @@ It includes the OTP code and the expiry time.
 Here’s a basic example:
 
 ```typescript
-import { createMailTransport, sendMail, renderTemplate } from "fastmail";
+import { createMailTransport, sendMail } from "fastmail";
+import {Test} from "fastmail/templates";
 
 // Create the mail transport (using Nodemailer)
 const mailTransport = createMailTransport({
@@ -86,18 +87,12 @@ const mailTransport = createMailTransport({
   },
 });
 
-// Use a pre-built welcome template
-const html = renderTemplate("welcome", {
-  userName: "John Doe",
-  signUpDate: "2024-10-02",
-});
-
 // Send the email
 await sendMail(mailTransport, {
   from: "your-email@example.com",
   to: "recipient@example.com",
   subject: "Welcome to Our Service!",
-  html,
+  template:Test()
 });
 ```
 
@@ -107,39 +102,19 @@ await sendMail(mailTransport, {
 
 You can use the pre-built templates like **Welcome**, **OTP**, and **Password Reset**. The `renderTemplate` function allows you to pass data for dynamic rendering.
 
-#### Example: Sending a Welcome Email
-
-```typescript
-import { renderTemplate, sendMail } from "fastmail";
-
-const html = renderTemplate("welcome", {
-  userName: "Jane Doe",
-  signUpDate: "2024-10-01",
-});
-
-await sendMail(mailTransport, {
-  from: "your-email@example.com",
-  to: "jane@example.com",
-  subject: "Welcome to Our App!",
-  html,
-});
-```
 
 #### Example: Sending an OTP Email
 
 ```typescript
 import { renderTemplate, sendMail } from "fastmail";
+import {Otp} from "fastmail/templates";
 
-const html = renderTemplate("otp", {
-  otpCode: "123456",
-  expiryTime: "10 minutes",
-});
 
 await sendMail(mailTransport, {
   from: "your-email@example.com",
   to: "john@example.com",
   subject: "Your OTP Code",
-  html,
+  template:Otp({otp: "123456", expiry: "5 minutes"}),
 });
 ```
 
@@ -177,12 +152,12 @@ export const myCustomTemplate = ({
 2. **Render and send the custom template**:
 
 ```typescript
-import { renderTemplate, sendMail } from "fastmail";
+import {  sendMail } from "fastmail";
+import { myCustomTemplate } from "./templates/myCustomTemplate";
 
-const html = renderTemplate("myCustomTemplate", {
-  userName: "Jane Doe",
-  customMessage: "This is a special message just for you!",
-});
+// Render the custom template
+const html = myCustomTemplate();
+
 
 await sendMail(mailTransport, {
   from: "your-email@example.com",
