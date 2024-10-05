@@ -52,15 +52,33 @@ yarn add fastmail
 
 ## Pre-built Templates
 
-### Welcome Email
+## Test Email
+The **Test** template is used to send a test email to users. It includes the user's name and the date they signed up.
 
+
+## Welcome Email
 The **Welcome** template is used to send a welcome email to new users. It includes the user's name and the date they signed up.
 includes the user's name and the date they signed up.
 
-### OTP Email
 
+## OTP Email
 The **OTP** template is used to send a one-time password (OTP) to users for authentication.
 It includes the OTP code and the expiry time.
+
+
+## Password Reset Email
+The **Password Reset** template is used to send a password reset link to users who have forgotten their password.
+It includes the reset link and the expiry time.
+
+
+## Verify Email
+The **Verify Email** template is used to send a verification email to users for email verification.
+It includes the verification link and the expiry time.
+
+
+## Newsletter Email
+The **Newsletter** template is used to send a newsletter email to subscribers.
+It includes the newsletter content and a call-to-action button.
 
 ---
 
