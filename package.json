@@ -1,15 +1,25 @@
 {
-  "name": "tsup-template",
+  "name": "fastmail",
   "license": "MIT",
-  "version": "0.0.4",
+  "version": "1.0.4",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "tsup src/index.ts --format cjs,esm --dts",
+    "build": "rm -rf dist && tsup",
     "release": "pnpm run build && changeset publish",
     "lint": "tsc"
   },
+  "author": "Om Dahale",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/omd01/fastmail"
+  }, 
+  "bugs": {
+    "url": "https://github.com/omd01/fastmail/issues"
+  },
+  
+  "description": "Send emails with pre-built templates in just plenty lines of code",
   "dependencies": {
     "nodemailer": "^6.9.15"
   },
@@ -18,5 +28,12 @@
     "@types/nodemailer": "^6.4.16",
     "tsup": "^6.5.0",
     "typescript": "^4.9.4"
-  }
+  },
+  "keywords": [
+    "Nodemailer",
+    "fastmail",
+    "email",
+    "send email",
+    "email templates"
+  ]
 }
