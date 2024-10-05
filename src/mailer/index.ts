@@ -16,7 +16,7 @@ type AttachmentParams = {
   cid?: string;
 };
 
-type MailParams = {
+interface MailParams  {
   from: string;
   to: string;
   subject: string;
