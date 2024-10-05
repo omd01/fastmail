@@ -1,7 +1,7 @@
 {
   "name": "fastmail",
   "license": "MIT",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
@@ -14,11 +14,10 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/omd01/fastmail"
-  }, 
+  },
   "bugs": {
     "url": "https://github.com/omd01/fastmail/issues"
   },
-  
   "description": "Send emails with pre-built templates in just plenty lines of code",
   "dependencies": {
     "nodemailer": "^6.9.15"
