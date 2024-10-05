@@ -31,6 +31,6 @@ jobs:
         id: changesets
         uses: changesets/action@v1
         with:
-          version: pnpm run version # Adjust to how you version your packages
+          version: 7
         env:
           GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
